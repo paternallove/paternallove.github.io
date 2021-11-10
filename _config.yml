@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "ko-KR" # "en-US"
-title                    : "손권의 Note book"
+title                    : "Note book"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "손권"
@@ -102,13 +102,13 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "손권"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : "Back-end developer"
+  location         : "Republic Korea, Seoul"
   email            :
   links:
-    - label: "Email"
+    - label: "sk9860074@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
     - label: "Website"
