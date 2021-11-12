@@ -2,8 +2,10 @@
 main:
   - title: "Categories"
     url: /categories/
-  - title: "test"
-    url: /test/
+  - title: "Tags"
+    url: /tags/
+  - title: "Year"
+    url: /year/
   - title: "Quick-Start Guide"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
