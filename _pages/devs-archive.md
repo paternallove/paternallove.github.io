@@ -1,5 +1,5 @@
 ---
-title: "Devs"
+title: "Develop"
 layout: collection
 permalink: /devs/
 collection: devs
