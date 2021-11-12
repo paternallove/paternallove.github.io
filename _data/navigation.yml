@@ -1,7 +1,7 @@
 # main links
 main:
-  - title: "docs"
-    url: /docs/
+  - title: "Categories"
+    url: /categories/
   - title: "test"
     url: /test/
   - title: "Quick-Start Guide"
