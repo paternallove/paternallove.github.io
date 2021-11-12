@@ -24,3 +24,7 @@ devs:
     children:
       - title: "JAVA"
         url: /devs/java/
+  - title: k8s
+    children:
+      - title: "k8s"
+        url: /devs/k8s/
