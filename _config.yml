@@ -276,9 +276,9 @@ compress_html:
 
 # Collections
 collections:
-  docs:
+  devs:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:path/ 
 #   recipes:
 #     output: true
 #     permalink: /:collection/:path/
@@ -302,10 +302,10 @@ defaults:
       comments: # true
       share: true
       related: true
-  # _docs
+  # _devs
   - scope:
       path: ""
-      type: docs
+      type: devs
     values:
       layout: single
       read_time: true
@@ -313,4 +313,4 @@ defaults:
       share: true
       comments: false
       sidebar:
-        nav: "docs"
+        nav: "devs"
