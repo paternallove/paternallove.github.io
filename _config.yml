@@ -304,7 +304,7 @@ defaults:
       related: true
   # _devs
   - scope:
-      path: ""
+      path: "_devs"
       type: devs
     values:
       layout: single
