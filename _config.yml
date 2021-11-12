@@ -275,10 +275,10 @@ compress_html:
     envs: development
 
 # Collections
-# collections:
-#   docs:
-#     output: true
-#     permalink: /:collection/:path/
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
 #   recipes:
 #     output: true
 #     permalink: /:collection/:path/
