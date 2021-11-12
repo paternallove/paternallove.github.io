@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Docs"
+    url: /docs/configuration/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
