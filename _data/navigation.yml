@@ -1,7 +1,7 @@
 # main links
 main:
-  - title: "Docs"
-    url: /docs/configuration/
+  - title: "Develop"
+    url: /devs/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
@@ -19,8 +19,8 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
 
-docs:
-  - title: Customization
+devs:
+  - title: JAVA
     children:
-      - title: "Configuration"
-        url: /docs/configuration/
+      - title: "JAVA"
+        url: /devs/java/
