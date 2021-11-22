@@ -71,6 +71,7 @@ toc: true
 		
 		# 클러스터 내부에서 테스트용 Pod를 생성해서 임시로 사용 하기 위한 스크림트
 		kubectl run -i --tty --rm debug --image=alicek106/ubuntu:curl --restart=Never bash
+		kubectl run -i --tty --rm debug --image=alicek106/ubuntu:curl --restart=Never -- bash
 		```
 	- sidecar container : Pod에 정의된 부가적인 컨테이넝
 		
@@ -181,3 +182,48 @@ toc: true
 		- 고유한 도메인 이름을 부여한다.
 		- load balance 기능을 수행한다.
 		- Cloud Platform의 로드 밸런서, 클러스터 노드의 포트 등을 통해 Pod를 외부로 노출한다.
+	- deployment-hostname.yaml
+		```
+		apiVersion: apps/v1
+		kind: Deployment
+		metadata:
+		  name: hostname-deployment
+		spec:
+		  replicas: 3
+		  selector:
+			matchLabels:
+			  app: webserver
+		  template:
+			metadata:
+			  name: my-webserver
+			  labels:
+				app: webserver
+			spec:
+			  containers:
+			  - name: my-webserver
+				image: alicek106/rr-test:echo-hostname
+				ports:
+				- containerPort: 80
+		```
+	- 종류
+		- ClusterIP 타입
+			- k8s 내부에서만 Pod를 접근할 때 사용. 외부로 Pod을 노출하지 않음
+			- hostname-svc-clusterip.yaml
+				```
+				apiVersion: v1
+				kind: Service
+				metadata:
+				  name: hostname-svc-clusterip
+				spec:
+				  ports:
+					- name: web-port
+					  port: 8080
+					  targetPort: 80
+				  selector:
+					app: webserver
+				  type: ClusterIP
+				```
+		- NodePort 타입
+			- k8s 외부에서 Pod에 접근할 때 사용. port를 cluster의 모든 Node에 동일하게 개방
+		- LoadBalancer 타입
+			- k8s 외부에서 Pod에 접근할 때 사용. AWS, GCP 등과 같은 Cloud Platform 환경에서만 사용. LoadBalancer를 동적으로 프로비저닝해 Pod에 연결.
