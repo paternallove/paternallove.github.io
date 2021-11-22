@@ -12,9 +12,8 @@ toc: true
 	```
 	kubectl api-resources
 	```
-  
-1. Pod
-  - 컨테이너 애플리케이션의 기본 단위
+**- Pod**
+	- 컨테이너 애플리케이션의 기본 단위
 	- 한개의 Pod에는 한개 이상의 컨테이너가 존재할 수 있다.
 	- 오프젝스 생성 명령
 		```
@@ -38,7 +37,7 @@ toc: true
 		kubectl run -i --tty --rm debug --image=alicek106/ubuntu:curl --restart=Never bash
 		```
 	- gb
-		* a
+		- a
 		
 
-2. Service
+**- Service**
