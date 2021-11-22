@@ -7,9 +7,13 @@ redirect_from:
 toc: true
 ---
 
-- 모든 오브젝트 목록
+- command
 	```
+	# 모든 오브젝트 목록
 	kubectl api-resources
+	
+	# 모드 리소스 제거
+	kubectl delete deployment,pod,rs --all
 	```
 
 1. **Pod**
@@ -39,8 +43,8 @@ toc: true
 		```
 		# 오브젝트 목록
 		kubectl get pods -o wide
-		kubectl get pods --show-labels				# 라벨도 표시
-		kubectl get pods -l app						# 라벨의 key가 "app"인 Pods  
+		kubectl get pods --show-labels	# 라벨도 표시
+		kubectl get pods -l app	# 라벨의 key가 "app"인 Pods  
 		kubectl get pods -l app=my-nginx-pods-label	# 라벨의 key가 "app"이고 value가 "my-nginx-pods-label"인 Pods
 		
 		# 오프젝트 생성 명령
@@ -126,3 +130,51 @@ toc: true
 				ports:
 				- containerPort: 80
 		```
+		
+3. **Deployment**
+	- 약할 : Deployment를 생서하면 ReplicaSet이 생성되고 ReplicaSet이 Pod를 생성함.
+	애플리케이션을 업데이트할 때 ReplicaSet의 변경 사항을 저장하는 revision을 남겨 롤벡을 가능하게 함.
+	무중단 서비스를 위한 Pod의 롤링 업데이트 전략을 지정할 수 있음.
+	- deployment-nginx.yaml
+		```
+		apiVersion: apps/v1
+		kind: Deployment
+		metadata:
+		  name: my-nginx-deployment
+		spec:
+		  replicas: 3
+		  selector:
+			matchLabels:
+			  app: my-nginx
+		  template:
+			metadata:
+			  name: my-nginx-pod
+			  labels:
+				app: my-nginx
+			spec:
+			  containers:
+			  - name: nginx
+				image: nginx:1.10
+				ports:
+				- containerPort: 80
+		```
+	- command
+		```
+		# 이전 정보를 revision으로서 보전 (최신 k8s 버전에서는 --tecord 옵션이 기본 설정임)
+		kubectl apply -f {yaml 파일} --record
+		
+		# 이미지 변경 명령
+		kubectl set image deployment my-nginx-deployment nginx=nginx:1.11 --record
+		
+		# revision 정보 확인
+		kubectl rollout history deployment my-nginx-deployment
+		
+		# 이전 버전의 ReplicaSet으로 되돌리고 싶은 경우
+		kubectl rollout undo deployment my-nginx-deployment --to-revision=1
+		```
+
+4. **Service**
+		- 역할 : Pod를 연결하고 외부에 노출
+		고유한 도메인 이름을 부여한다.
+		load balance 기능을 수행한다.
+		크랄우드 플랫폼의 로드 밸런서, 클러스터 노드의 포트 등을 통해 Pod를 외부로 노출한다.
