@@ -26,5 +26,5 @@ devs:
         url: /devs/java/
   - title: k8s
     children:
-      - title: "Kubernetes 기본 Object"
-        url: /devs/k8s/Kubernetes-기본-Object
+      - title: "기본 Object"
+        url: /devs/k8s/00-basic-object
