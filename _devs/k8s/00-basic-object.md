@@ -132,7 +132,7 @@ toc: true
 		```
 		
 3. **Deployment**
-	- 약할 : Deployment를 생서하면 ReplicaSet이 생성되고 ReplicaSet이 Pod를 생성함.
+	- 역할 : Deployment를 생서하면 ReplicaSet이 생성되고 ReplicaSet이 Pod를 생성함.
 	애플리케이션을 업데이트할 때 ReplicaSet의 변경 사항을 저장하는 revision을 남겨 롤벡을 가능하게 함.
 	무중단 서비스를 위한 Pod의 롤링 업데이트 전략을 지정할 수 있음.
 	- deployment-nginx.yaml
@@ -174,7 +174,7 @@ toc: true
 		```
 
 4. **Service**
-		- 역할 : Pod를 연결하고 외부에 노출
-		고유한 도메인 이름을 부여한다.
-		load balance 기능을 수행한다.
-		크랄우드 플랫폼의 로드 밸런서, 클러스터 노드의 포트 등을 통해 Pod를 외부로 노출한다.
+	- 역할 : Pod를 연결하고 외부에 노출
+	고유한 도메인 이름을 부여한다.
+	load balance 기능을 수행한다.
+	크랄우드 플랫폼의 로드 밸런서, 클러스터 노드의 포트 등을 통해 Pod를 외부로 노출한다.
