@@ -8,8 +8,6 @@ redirect_from:
 toc: true
 ---
 
-# Kubernetes 기본 Object
-
 * 모든 오브젝트 목록
 	```
 	kubectl api-resources
