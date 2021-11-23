@@ -262,8 +262,8 @@ toc: true
 				  type: NodePort
 				```
 			- 특정 클라이언트가 같은 Pod으로 부터 처리되게 하려면 서비스의 설정에 sessionAffinity: ClientIP 를 셋팅
-				hostname-svc-nodeport-affinity.yaml
-				```
+			hostname-svc-nodeport-affinity.yaml
+				```yaml
 				apiVersion: v1
 				kind: Service
 				metadata:
