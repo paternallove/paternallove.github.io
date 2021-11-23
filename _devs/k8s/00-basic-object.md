@@ -285,7 +285,7 @@ toc: true
 	- LoadBalancer 타입
 		- k8s 외부에서 Pod에 접근할 때 사용. AWS, GCP 등과 같은 Cloud Platform 환경에서만 사용. LoadBalancer를 동적으로 프로비저닝해 Pod에 연결.
 		- hostname-svc-lb.yaml
-			```
+			```yaml
 			apiVersion: v1
 			kind: Service
 			metadata:
@@ -314,7 +314,7 @@ toc: true
 	- Pod이 생성된 노드에서만 Pod로 접근 가능.
 	- 추가적인 네트워크 홉이 발생 하지 않음, 전달되는 요청의 클라이언트 IP 가 보존됨.
 	- hostname-svc-lb-local.yaml
-		```
+		```yaml
 		apiVersion: v1
 		kind: Service
 		metadata:
@@ -333,7 +333,7 @@ toc: true
 ### 6. **요청을 외부로 리다이렉트하는 서비스 : ExternalName**
 - k8s를 외부 시스템과 연동해야 할때 
 - external-svc.yaml
-	```
+	```yaml
 	# externalname-svc로 요청을 보내면 paternallove.github.io에 접근하게 됨.
 	apiVersion: v1
 	kind: Service
