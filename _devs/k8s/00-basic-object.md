@@ -331,3 +331,16 @@ toc: true
 		```
 			
 ### 6. **요청을 외부로 리다이렉트하는 서비스 : ExternalName**
+- k8s를 외부 시스템과 연동해야 할때 
+- external-svc.yaml
+	```
+	# externalname-svc로 요청을 보내면 paternallove.github.io에 접근하게 됨.
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  name: externalname-svc
+	spec:
+	  type: ExternalName
+	  externalName: paternallove.github.io
+	```
+
