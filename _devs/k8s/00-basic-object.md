@@ -227,6 +227,9 @@ toc: true
 			- 클러스터 내부에서 서로를 찾아 연결해야 할때는 서비스 이름(hostname-svc-clusterip)과 같은 도메인 이름을 사용하는 것이 일반적
 		- NodePort 타입
 			- k8s 외부에서 Pod에 접근할 때 사용. port를 cluster의 모든 Node에 동일하게 개방
+			- NodePort의 포트범위는 30000~32768 이지만 API 서버의 옵션을 변경하여 범위 설정이 가능하다.
+				`--service-node-port-range=30000-35000`
+			- **Ingress**(외부요청을 실제로 받아들이는 관문) : NodePort 서비스는 그 자체를 통해서 외부로 제공하기 보다 Ingress 오브젝트에서 간접적으로 사용되는 경우가 많음.
 			- hostname-svc-nodeport.yaml
 				```yaml
 				apiVersion: v1
@@ -254,6 +257,23 @@ toc: true
 					  port: 8080
 					  targetPort: 80
 					  nodePort: 31000 # 30000~32768 사이에서 자동 선택됨.
+				  selector:
+					app: webserver
+				  type: NodePort
+				```
+			- 특정 클라이언트가 같은 Pod으로 부터 처리되게 하려면 서비스의 설정에 sessionAffinity: ClientIP 를 셋팅
+				hostname-svc-nodeport-affinity.yaml
+				```
+				apiVersion: v1
+				kind: Service
+				metadata:
+				  name: hostname-svc-nodeport-affinity
+				spec:
+				  sessionAffinity: ClientIP
+				  ports:
+					- name: web-port
+					  port: 80
+					  targetPort: 80
 				  selector:
 					app: webserver
 				  type: NodePort
