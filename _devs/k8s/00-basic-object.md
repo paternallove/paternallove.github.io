@@ -40,7 +40,7 @@ toc: true
 			args: ["-f", "/dev/null"] # 포드가 종료되지 않도록 유지합니다
 		```
 	- command
-		```{.bash}
+		```bash
 		# 오브젝트 목록
 		kubectl get pods -o wide
 		kubectl get pods --show-labels	# 라벨도 표시
@@ -228,7 +228,7 @@ toc: true
 		- NodePort 타입
 			- k8s 외부에서 Pod에 접근할 때 사용. port를 cluster의 모든 Node에 동일하게 개방
 			- hostname-svc-nodeport.yaml
-				```{.yaml}
+				```yaml
 				apiVersion: v1
 				kind: Service
 				metadata:
