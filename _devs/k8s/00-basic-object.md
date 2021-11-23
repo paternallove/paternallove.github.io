@@ -40,7 +40,7 @@ toc: true
 			args: ["-f", "/dev/null"] # 포드가 종료되지 않도록 유지합니다
 		```
 	- command
-		```
+		```{.bash}
 		# 오브젝트 목록
 		kubectl get pods -o wide
 		kubectl get pods --show-labels	# 라벨도 표시
@@ -163,7 +163,7 @@ toc: true
 				- containerPort: 80
 		```
 	- command
-		```
+		```{.bash}
 		# 이전 정보를 revision으로서 보전 (최신 k8s 버전에서는 --tecord 옵션이 기본 설정임)
 		kubectl apply -f {yaml 파일} --record
 		
@@ -208,6 +208,7 @@ toc: true
 	- 종류
 		- ClusterIP 타입
 			- k8s 내부에서만 Pod를 접근할 때 사용. 외부로 Pod을 노출하지 않음
+			- 별도의 설정이 없어도 서비스는 연결된 Pod에 대하여 로드 밸런싱을 수행함.
 			- hostname-svc-clusterip.yaml
 				```
 				apiVersion: v1
@@ -223,7 +224,29 @@ toc: true
 					app: webserver
 				  type: ClusterIP
 				```
+			- 클러스터 내부에서 서로를 찾아 연결해야 할때는 서비스 이름(hostname-svc-clusterip)과 같은 도메인 이름을 사용하는 것이 일반적
 		- NodePort 타입
 			- k8s 외부에서 Pod에 접근할 때 사용. port를 cluster의 모든 Node에 동일하게 개방
+			- hostname-svc-nodeport.yaml
+				```{.yaml}
+				apiVersion: v1
+				kind: Service
+				metadata:
+				  name: hostname-svc-nodeport
+				spec:
+				  ports:
+					- name: web-port
+					  port: 8080
+					  targetPort: 80
+				  selector:
+					app: webserver
+				  type: NodePort
+				```
 		- LoadBalancer 타입
 			- k8s 외부에서 Pod에 접근할 때 사용. AWS, GCP 등과 같은 Cloud Platform 환경에서만 사용. LoadBalancer를 동적으로 프로비저닝해 Pod에 연결.
+	- command
+		```
+		# 서비스와 관련된 endpoint 확인
+		kubectl get endpoint
+		kubedtl get ep
+		```
