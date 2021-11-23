@@ -21,7 +21,7 @@ toc: true
 	- 한개의 Pod에는 한개 이상의 컨테이너가 존재할 수 있다.
 	- Pod 내부의 컨테이너들은 같은 네트워크 네임스페이와 같은 리눅스 네임스페이스를 공유해서 사욯한다.
 	- nginx-pod.yaml
-		```yaml:nginx-pod.yaml
+		```yaml
 		apiVersion: v1
 		kind: Pod
 		metadata:
@@ -81,7 +81,7 @@ toc: true
 		- 정해진 수의 동일한 Pod이 항상 실행되도록 관리한다. 
 		- 노드 장애 등의 이유로 Pod을 사용할 수 없다면 다른 노드에서 Pod을 다시 생성한다.
 	- replicaset-nginx.yaml
-		```yaml:replicaset-nginx.yaml
+		```yaml
 		apiVersion: apps/v1
 		kind: ReplicaSet
 		metadata:
@@ -104,7 +104,7 @@ toc: true
 				- containerPort: 80
 		```
 	- replicaset-nginx-match-expression.yaml
-		```yaml:replicaset-nginx-match-expression.yaml
+		```yaml
 		apiVersion: apps/v1
 		kind: ReplicaSet
 		metadata:
@@ -140,7 +140,7 @@ toc: true
 		- 애플리케이션을 업데이트할 때 ReplicaSet의 변경 사항을 저장하는 revision을 남겨 롤벡을 가능하게 함.
 		- 무중단 서비스를 위한 Pod의 롤링 업데이트 전략을 지정할 수 있음.
 	- deployment-nginx.yaml
-		```yaml:deployment-nginx.yaml
+		```yaml
 		apiVersion: apps/v1
 		kind: Deployment
 		metadata:
@@ -183,7 +183,7 @@ toc: true
 		- load balance 기능을 수행한다.
 		- Cloud Platform의 로드 밸런서, 클러스터 노드의 포트 등을 통해 Pod를 외부로 노출한다.
 	- deployment-hostname.yaml
-		```yaml:deployment-hostname.yaml
+		```yaml
 		apiVersion: apps/v1
 		kind: Deployment
 		metadata:
@@ -210,7 +210,7 @@ toc: true
 			- k8s 내부에서만 Pod를 접근할 때 사용. 외부로 Pod을 노출하지 않음
 			- 별도의 설정이 없어도 서비스는 연결된 Pod에 대하여 로드 밸런싱을 수행함.
 			- hostname-svc-clusterip.yaml
-				```yaml:hostname-svc-clusterip.yaml
+				```yaml
 				apiVersion: v1
 				kind: Service
 				metadata:
@@ -228,7 +228,7 @@ toc: true
 		- NodePort 타입
 			- k8s 외부에서 Pod에 접근할 때 사용. port를 cluster의 모든 Node에 동일하게 개방
 			- hostname-svc-nodeport.yaml
-				```yaml:hostname-svc-nodeport.yaml
+				```yaml
 				apiVersion: v1
 				kind: Service
 				metadata:
@@ -243,7 +243,7 @@ toc: true
 				  type: NodePort
 				```
 			- hostname-svc-nodeport-custom.yaml (node port 설정)
-				```yaml:hostname-svc-nodeport-custom.yaml (node port 설정)
+				```yaml
 				apiVersion: v1
 				kind: Service
 				metadata:
