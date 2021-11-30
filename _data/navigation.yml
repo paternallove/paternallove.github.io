@@ -28,3 +28,6 @@ devs:
     children:
       - title: "기본 Object"
         url: /devs/k8s/00-basic-object
+        children:
+          - title: "Pod"
+            url: /devs/k8s/00-basic-object
