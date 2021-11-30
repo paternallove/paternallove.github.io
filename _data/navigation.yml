@@ -27,3 +27,6 @@ devs:
   - title: k8s
     children:
       - title: "기본 Object"
+        url: /devs/k8s/00-base-object
+      - title: "Controller Object"
+        url: /devs/k8s/00-controller-object
