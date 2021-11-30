@@ -20,7 +20,8 @@ toc: true
 - 컨테이너 애플리케이션의 기본 단위
 - 한개의 Pod에는 한개 이상의 컨테이너가 존재할 수 있다.
 - Pod 내부의 컨테이너들은 같은 네트워크 네임스페이와 같은 리눅스 네임스페이스를 공유해서 사욯한다.
-- nginx-pod.yaml <details><summary>[펼치기]</summary><div markdown="1">
+- nginx-pod.yaml 
+  <details>
 	```yaml
 	apiVersion: v1
 	kind: Pod
@@ -39,7 +40,7 @@ toc: true
 		command: ["tail"]
 		args: ["-f", "/dev/null"] # 포드가 종료되지 않도록 유지합니다
 	```
-  </div></details>
+  </details>
 - command
 	```bash
 	# 오브젝트 목록
