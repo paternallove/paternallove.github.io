@@ -306,7 +306,7 @@ toc: true
 	kubedtl get ep
 	```
 		
-### 5. **트래픽의 분배를 결정 하는 서비스 속성 : externalTrafficPolicy**
+#### 4.1. **트래픽의 분배를 결정 하는 서비스 속성 : externalTrafficPolicy**
 - externalTrafficPolicy: Cluster
 	- 클러스터의 모든 노드에 랜덤한 포트를 개방
 	- 서비스의 기본 설정값
@@ -330,7 +330,7 @@ toc: true
 		  type: LoadBalancer
 		```
 			
-### 6. **요청을 외부로 리다이렉트하는 서비스 : ExternalName**
+#### 4.2. **요청을 외부로 리다이렉트하는 서비스 : ExternalName**
 - k8s를 외부 시스템과 연동해야 할때 
 - external-svc.yaml
 	```yaml
