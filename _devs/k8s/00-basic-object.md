@@ -344,3 +344,17 @@ toc: true
 	  externalName: paternallove.github.io
 	```
 
+### 5. Volume
+#### 5.1. emptyDir
+#### 5.2. hostPath
+#### 5.3. PVC / PV
+
+### 6. ConfigMap / Secret
+#### 6.1. ConfigMap
+#### 6.2. Secret
+
+### 7. Namespace / ResourceQuota / LimitRage
+#### 7.1. Namespace
+#### 7.2. ResourceQuota
+#### 7.3. LimitRage
+
