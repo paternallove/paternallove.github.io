@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes Controller Object"
-permalink: /devs/k8s/00-controller-object
-last_modified_at: 2021-11-22
+permalink: /devs/k8s/01-controller-object
+last_modified_at: 2021-11-30
 redirect_from:
   - /theme-setup/
 toc: true
