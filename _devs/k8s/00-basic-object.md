@@ -21,7 +21,7 @@ toc: true
 - 한개의 Pod에는 한개 이상의 컨테이너가 존재할 수 있다.
 - Pod 내부의 컨테이너들은 같은 네트워크 네임스페이와 같은 리눅스 네임스페이스를 공유해서 사욯한다.
 - nginx-pod.yaml 
-  <details><div markdown="1"><summary>nginx-pod.yaml</summary>
+  <details><summary>nginx-pod.yaml</summary><div markdown="1">
 	```yaml
 	apiVersion: v1
 	kind: Pod
