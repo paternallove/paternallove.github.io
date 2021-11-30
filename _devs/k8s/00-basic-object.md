@@ -7,7 +7,7 @@ redirect_from:
 toc: true
 ---
 
-- command
+- <details><summary>command</summary><div markdown="1">
 	```bash
 	# 모든 오브젝트 목록
 	kubectl api-resources
@@ -15,13 +15,12 @@ toc: true
 	# 모드 리소스 제거
 	kubectl delete deployment,pod,rs --all
 	```
-
+  </div></details>
 ### 1. **Pod**
 - 컨테이너 애플리케이션의 기본 단위
 - 한개의 Pod에는 한개 이상의 컨테이너가 존재할 수 있다.
 - Pod 내부의 컨테이너들은 같은 네트워크 네임스페이와 같은 리눅스 네임스페이스를 공유해서 사욯한다.
-- nginx-pod.yaml 
-  <details><summary>nginx-pod.yaml</summary><div markdown="1">
+- <details><summary>nginx-pod.yaml</summary><div markdown="1">
 	```yaml
 	apiVersion: v1
 	kind: Pod
@@ -41,7 +40,7 @@ toc: true
 		args: ["-f", "/dev/null"] # 포드가 종료되지 않도록 유지합니다
 	```
   </div></details>
-- command
+- <details><summary>command</summary><div markdown="1">
 	```bash
 	# 오브젝트 목록
 	kubectl get pods -o wide
@@ -76,6 +75,7 @@ toc: true
 	kubectl run -i --tty --rm debug --image=alicek106/ubuntu:curl --restart=Never bash
 	kubectl run -i --tty --rm debug --image=alicek106/ubuntu:curl --restart=Never -- bash
 	```
+  </div></details>
 - sidecar container : Pod에 정의된 부가적인 컨테이넝
 		
 
