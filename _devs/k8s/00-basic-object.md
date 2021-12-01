@@ -130,7 +130,7 @@ toc: true
 				app: webserver
 			  type: ClusterIP
 			```
-		</div></details>
+			</div></details>
 		- 클러스터 내부에서 서로를 찾아 연결해야 할때는 서비스 이름(hostname-svc-clusterip)과 같은 도메인 이름을 사용하는 것이 일반적
 	- NodePort 타입
 		- k8s 외부에서 Pod에 접근할 때 사용. port를 cluster의 모든 Node에 동일하게 개방
@@ -152,7 +152,7 @@ toc: true
 				app: webserver
 			  type: NodePort
 			```
-		</div></details>
+			</div></details>
 		- <details><summary>hostname-svc-nodeport-custom.yaml (node port 설정)</summary><div markdown="1">
 			```yaml
 			apiVersion: v1
@@ -169,7 +169,7 @@ toc: true
 				app: webserver
 			  type: NodePort
 			```
-		</div></details>
+			</div></details>
 		- 특정 클라이언트가 같은 Pod으로 부터 처리되게 하려면 서비스의 설정에 sessionAffinity: ClientIP 를 셋팅
 		<details><summary>hostname-svc-nodeport-affinity.yaml</summary><div markdown="1">
 			```yaml
@@ -187,7 +187,7 @@ toc: true
 				app: webserver
 			  type: NodePort
 			```
-		</div></details>
+			</div></details>
 	- LoadBalancer 타입
 		- k8s 외부에서 Pod에 접근할 때 사용. AWS, GCP 등과 같은 Cloud Platform 환경에서만 사용. LoadBalancer를 동적으로 프로비저닝해 Pod에 연결.
 		- <details><summary>hostname-svc-lb.yaml</summary><div markdown="1">
@@ -205,14 +205,14 @@ toc: true
 				app: webserver
 			  type: LoadBalancer
 			```
-		</div></details>
+			</div></details>
 - <details><summary>command</summary><div markdown="1">
 	```bash
 	# 서비스와 관련된 endpoint 확인
 	kubectl get endpoint
 	kubedtl get ep
 	```
-</div></details>
+	</div></details>
 		
 ### 트래픽의 분배를 결정 하는 서비스 속성 : externalTrafficPolicy
 - externalTrafficPolicy: Cluster
@@ -252,7 +252,7 @@ toc: true
 	  type: ExternalName
 	  externalName: paternallove.github.io
 	```
-</div></details>
+	</div></details>
 
 ## Volume
 ### emptyDir
