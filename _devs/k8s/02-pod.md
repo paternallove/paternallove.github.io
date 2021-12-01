@@ -10,11 +10,11 @@ toc: true
 ## Lifecycle
 - Pending > Running > Succeeded > Faild
 
-- 	|Pod |
-	|:----|
-	||Status||
-	||:-----||
-	|||Phase|||
-	|||Conditions|||
-	||Containers||
-	||:---------||
+### 속성
+- status
+	- phase : [Pending, Running, Succeeded, Faild, Unknown]
+	- conditions : [Initialized, ContainerReady, PodScheduled, Ready]
+		- reason : [ContainersNotReady, PodCompleted]
+	- containerStatuses
+		- status : [wating, running, termimated]
+			- reason : [ContainerCreating, CrashLoopBackOff, Error, Completed]
