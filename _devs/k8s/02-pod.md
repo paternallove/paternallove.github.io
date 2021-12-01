@@ -11,5 +11,6 @@ toc: true
 - Pending > Running > Succeeded > Faild
 
 - 	|Pod |
-	|:--:|
+	|:----|
 	||Status||
+	||:----||
