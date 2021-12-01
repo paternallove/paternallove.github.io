@@ -7,6 +7,16 @@ redirect_from:
 toc: true
 ---
 
+## Controller가 하는 역할
+- Auto Healing
+	- Pod 또는 Node에 문제가 생기면 새로운 Pod를 생성
+- Software Update
+	- 새로우 버전의 Pod을 생성
+- Auto Scaling
+	- 리소스를 초과하는 경우 추가 Pod을 생성
+- Job
+	- 일시적인 작업 실행
+
 ## ReplicaSet
 - 역할
 	- 정해진 수의 동일한 Pod이 항상 실행되도록 관리한다. 
@@ -117,29 +127,19 @@ toc: true
 
 ## DaemonSet, Job, CronJob
 
+### DaemonSet
+	- ReplicaSet과 달리 Node의 자원과 상관 없이 각 Node에 하나씩 생성됨
+	- Node에 하나를 초과한 Pod을 만들수는 없지만 특정 Node에 Pod를 안 만들수는 있음
+	- 사용 목적
+		- Performance : Prometheous와 같은 성능 모니터링 툴
+		- Logging : Fluentd와 같은 로그 수집 툴
+		- Storage : GlusterFS와 같은 툴을 사용하여 Node를 Network file 시스템으로 사용 하는 경우
+### Job
+	- ReplicaSet 으로 만든 Pod와 달리 프로세스가 일을 하지 않으면 Pod가 종료(지원지지는 않음)
+### CronJob
+	- Job을 주기적인 시간에 생성되고
+	- 사용 용도
+		- Backup : 데이터 벡업
+		- Checking : 버전 체크
+		- Messaging : 메시지 발송
 
-
-
-- 컨테이너 애플리케이션의 기본 단위
-- 한개의 Pod에는 한개 이상의 컨테이너가 존재할 수 있다.
-- Pod 내부의 컨테이너들은 같은 네트워크 네임스페이와 같은 리눅스 네임스페이스를 공유해서 사욯한다.
-- <details><summary>nginx-pod.yaml</summary><div markdown="1">
-	```yaml
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	  name: my-nginx-pod
-	spec:
-	  containers:
-	  - name: my-nginx-container
-		image: nginx:latest
-		ports:
-		- containerPort: 80
-		  protocol: TCP
-
-	  - name: ubuntu-sidecar-container
-		image: alicek106/rr-test:curl
-		command: ["tail"]
-		args: ["-f", "/dev/null"] # 포드가 종료되지 않도록 유지합니다
-	```
-  </div></details>
