@@ -10,7 +10,7 @@ toc: true
 ## Lifecycle
 - Pending > Running > Succeeded > Faild
 
-### 속성
+### 속성 및 상태
 - status
 	- phase `Pending, Running, Succeeded, Faild, Unknown`
 	- conditions `Initialized, ContainerReady, PodScheduled, Ready`
