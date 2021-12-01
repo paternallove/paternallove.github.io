@@ -30,3 +30,5 @@ devs:
         url: /devs/k8s/00-basic-object
       - title: "Controller Object"
         url: /devs/k8s/01-controller-object
+      - title: "Pod"
+        url: /devs/k8s/02-pod
