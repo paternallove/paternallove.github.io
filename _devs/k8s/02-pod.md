@@ -12,9 +12,9 @@ toc: true
 
 ### 속성
 - status
-	- phase : [Pending, Running, Succeeded, Faild, Unknown]
-	- conditions : [Initialized, ContainerReady, PodScheduled, Ready]
-		- reason : [ContainersNotReady, PodCompleted]
+	- phase `Pending, Running, Succeeded, Faild, Unknown`
+	- conditions `Initialized, ContainerReady, PodScheduled, Ready`
+		- reason `ContainersNotReady, PodCompleted`
 	- containerStatuses
-		- status : [wating, running, termimated]
-			- reason : [ContainerCreating, CrashLoopBackOff, Error, Completed]
+		- status `wating, running, termimated`
+			- reason `ContainerCreating, CrashLoopBackOff, Error, Completed`
