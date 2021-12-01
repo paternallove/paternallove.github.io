@@ -13,4 +13,8 @@ toc: true
 - 	|Pod |
 	|:----|
 	||Status||
-	||:----||
+	||:-----||
+	|||Phase|||
+	|||Conditions|||
+	||Containers||
+	||:---------||
