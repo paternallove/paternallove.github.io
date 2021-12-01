@@ -16,7 +16,7 @@ toc: true
 	kubectl delete deployment,pod,rs --all
 	```
   </div></details>
-### 1. **Pod**
+## Pod
 - 컨테이너 애플리케이션의 기본 단위
 - 한개의 Pod에는 한개 이상의 컨테이너가 존재할 수 있다.
 - Pod 내부의 컨테이너들은 같은 네트워크 네임스페이와 같은 리눅스 네임스페이스를 공유해서 사욯한다.
@@ -77,117 +77,8 @@ toc: true
 	```
   </div></details>
 - sidecar container : Pod에 정의된 부가적인 컨테이넝
-		
 
-### 2. **Replica set**
-- 역할
-	- 정해진 수의 동일한 Pod이 항상 실행되도록 관리한다. 
-	- 노드 장애 등의 이유로 Pod을 사용할 수 없다면 다른 노드에서 Pod을 다시 생성한다.
-- <details><summary>replicaset-nginx.yaml</summary><div markdown="1">
-	```yaml
-	apiVersion: apps/v1
-	kind: ReplicaSet
-	metadata:
-	  name: replicaset-nginx
-	spec:
-	  replicas: 3
-	  selector:
-		matchLabels:
-		  app: my-nginx-pods-label
-	  template:
-		metadata:
-		  name: my-nginx-pod
-		  labels: 
-			app: my-nginx-pods-label
-		spec:
-		  containers:
-		  - name: nginx
-			image: nginx:latest
-			ports:
-			- containerPort: 80
-	```
-  </div></details>
-- <details><summary>replicaset-nginx-match-expression.yaml</summary><div markdown="1">
-	```yaml
-	apiVersion: apps/v1
-	kind: ReplicaSet
-	metadata:
-	  name: replicaset-nginx
-	spec:
-	  replicas: 3
-	  selector:
-		matchLabels:
-		  app: our-nginx-pods-label
-		matchExpressions:
-		  - key: app2
-			values:
-			  - my-nginx-pods-label
-			  - your-nginx-pods-label
-			operator: In
-	  template:
-		metadata:
-		  name: my-nginx-pod
-		  labels:
-			app: our-nginx-pods-label
-			app2: my-nginx-pods-label
-		spec:
-		  containers:
-		  - name: nginx
-			image: nginx:latest
-			ports:
-			- containerPort: 80
-	```
-  </div></details>
-		
-### 3. **Deployment**
-- 역할
-	- Deployment를 생서하면 ReplicaSet이 생성되고 ReplicaSet이 Pod를 생성함.
-	- 애플리케이션을 업데이트할 때 ReplicaSet의 변경 사항을 저장하는 revision을 남겨 롤벡을 가능하게 함.
-	- 무중단 서비스를 위한 Pod의 롤링 업데이트 전략을 지정할 수 있음.
-- <details><summary>deployment-nginx.yaml</summary><div markdown="1">
-	```yaml
-	apiVersion: apps/v1
-	kind: Deployment
-	metadata:
-	  name: my-nginx-deployment
-	spec:
-	  replicas: 3
-	  selector:
-		matchLabels:
-		  app: my-nginx
-	  template:
-		metadata:
-		  name: my-nginx-pod
-		  labels:
-			app: my-nginx
-		spec:
-		  containers:
-		  - name: nginx
-			image: nginx:1.10
-			ports:
-			- containerPort: 80
-	```
-  </div></details>
-- <details><summary>command</summary><div markdown="1">
-	```bash
-	# 이전 정보를 revision으로서 보전 (최신 k8s 버전에서는 --tecord 옵션이 기본 설정임)
-	kubectl apply -f {yaml 파일} --record
-	
-	# deployment 의 Pod 개수 변경
-	kubectl scale --replicas=1 deployment {deployment 이름}
-	
-	# 이미지 변경 명령
-	kubectl set image deployment my-nginx-deployment nginx=nginx:1.11 --record
-	
-	# revision 정보 확인
-	kubectl rollout history deployment my-nginx-deployment
-	
-	# 이전 버전의 ReplicaSet으로 되돌리고 싶은 경우
-	kubectl rollout undo deployment my-nginx-deployment --to-revision=1
-	```
-  </div></details>
-
-### 4. **Service**
+## Service
 - 역할
 	- 고유한 도메인 이름을 부여한다.
 	- load balance 기능을 수행한다.
@@ -319,7 +210,7 @@ toc: true
 	```
   </div></details>
 		
-#### 4.1. **트래픽의 분배를 결정 하는 서비스 속성 : externalTrafficPolicy**
+### 트래픽의 분배를 결정 하는 서비스 속성 : externalTrafficPolicy
 - externalTrafficPolicy: Cluster
 	- 클러스터의 모든 노드에 랜덤한 포트를 개방
 	- 서비스의 기본 설정값
@@ -344,7 +235,7 @@ toc: true
 		```
     </div></details>
 			
-#### 4.2. **요청을 외부로 리다이렉트하는 서비스 : ExternalName**
+### 요청을 외부로 리다이렉트하는 서비스 : ExternalName
 - k8s를 외부 시스템과 연동해야 할때 
 - <details><summary>external-svc.yaml</summary><div markdown="1">
 	```yaml
@@ -359,17 +250,17 @@ toc: true
 	```
   </div></details>
 
-### 5. Volume
-#### 5.1. emptyDir
-#### 5.2. hostPath
-#### 5.3. PVC / PV
+## Volume
+### emptyDir
+### hostPath
+### PVC / PV
 
-### 6. ConfigMap / Secret
-#### 6.1. ConfigMap
-#### 6.2. Secret
+## ConfigMap / Secret
+### ConfigMap
+### Secret
 
-### 7. Namespace / ResourceQuota / LimitRage
-#### 7.1. Namespace
-#### 7.2. ResourceQuota
-#### 7.3. LimitRage
+## Namespace / ResourceQuota / LimitRage
+### Namespace
+### ResourceQuota
+### LimitRage
 
