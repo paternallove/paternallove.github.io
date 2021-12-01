@@ -126,6 +126,7 @@ toc: true
 	</div></details>
 
 ## DaemonSet, Job, CronJob
+
 ### DaemonSet
 	- ReplicaSet과 달리 Node의 자원과 상관 없이 각 Node에 하나씩 생성됨
 	- Node에 하나를 초과한 Pod을 만들수는 없지만 특정 Node에 Pod를 안 만들수는 있음
@@ -133,8 +134,10 @@ toc: true
 		- Performance : Prometheous와 같은 성능 모니터링 툴
 		- Logging : Fluentd와 같은 로그 수집 툴
 		- Storage : GlusterFS와 같은 툴을 사용하여 Node를 Network file 시스템으로 사용 하는 경우
+		
 ### Job
 	- ReplicaSet 으로 만든 Pod와 달리 프로세스가 일을 하지 않으면 Pod가 종료(지원지지는 않음)
+	
 ### CronJob
 	- Job을 주기적인 시간에 생성되고
 	- 사용 용도
