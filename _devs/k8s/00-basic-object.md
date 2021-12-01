@@ -237,7 +237,7 @@ toc: true
 			app: webserver
 		  type: LoadBalancer
 		```
-    </div></details>
+		</div></details>
 			
 ### 요청을 외부로 리다이렉트하는 서비스 : ExternalName
 - k8s를 외부 시스템과 연동해야 할때 
