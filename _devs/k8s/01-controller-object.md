@@ -105,7 +105,7 @@ toc: true
 			ports:
 			- containerPort: 80
 	```
-  </div></details>
+	</div></details>
 - <details><summary>command</summary><div markdown="1">
 	```bash
 	# 이전 정보를 revision으로서 보전 (최신 k8s 버전에서는 --tecord 옵션이 기본 설정임)
@@ -123,10 +123,9 @@ toc: true
 	# 이전 버전의 ReplicaSet으로 되돌리고 싶은 경우
 	kubectl rollout undo deployment my-nginx-deployment --to-revision=1
 	```
-  </div></details>
+	</div></details>
 
 ## DaemonSet, Job, CronJob
-
 ### DaemonSet
 	- ReplicaSet과 달리 Node의 자원과 상관 없이 각 Node에 하나씩 생성됨
 	- Node에 하나를 초과한 Pod을 만들수는 없지만 특정 Node에 Pod를 안 만들수는 있음
