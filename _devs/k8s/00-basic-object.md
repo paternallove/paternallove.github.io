@@ -16,6 +16,7 @@ toc: true
 	kubectl delete deployment,pod,rs --all
 	```
   </div></details>
+
 ## Pod
 - 컨테이너 애플리케이션의 기본 단위
 - 한개의 Pod에는 한개 이상의 컨테이너가 존재할 수 있다.
