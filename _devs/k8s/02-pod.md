@@ -11,6 +11,7 @@ toc: true
 - Pending > Running > Succeeded > Faild
 
 ### 속성 및 상태
+```
 - status
 	- phase `Pending, Running, Succeeded, Faild, Unknown`
 	- conditions `Initialized, ContainerReady, PodScheduled, Ready`
@@ -18,6 +19,8 @@ toc: true
 	- containerStatuses
 		- status `wating, running, termimated`
 			- reason `ContainerCreating, CrashLoopBackOff, Error, Completed`
+```
+{: .notice--info}
 
 ## ReadinessProbe / LivenessProbe
 
@@ -28,6 +31,7 @@ toc: true
 - Pod의 App의 장애 사항을 판단해 Pod를 재실행 줌.
 
 ### 속성
+```
 - httpGet
 	- port
 	- host
@@ -44,5 +48,7 @@ toc: true
 - timeoutSeconds : 이 지정된 시간까지 결과가 와야함 (default : 1)
 - succesThreshold : 몇번 성공을 받아야 성공으로 판단 할건지 (default : 1)
 - failureThreshold : 몇번 실패를 방아야 실패로 판단 할건지 (default : 3)
+```
+{: .notice--info}
 
 
