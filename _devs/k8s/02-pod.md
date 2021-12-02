@@ -18,7 +18,7 @@ toc: true
 		- containerStatuses
 			- status `wating, running, termimated`
 				- reason `ContainerCreating, CrashLoopBackOff, Error, Completed`
-	{: .notice--info}
+{: .notice--info}
 
 ## ReadinessProbe / LivenessProbe
 
@@ -45,6 +45,6 @@ toc: true
 	- timeoutSeconds : 이 지정된 시간까지 결과가 와야함 (default : 1)
 	- succesThreshold : 몇번 성공을 받아야 성공으로 판단 할건지 (default : 1)
 	- failureThreshold : 몇번 실패를 방아야 실패로 판단 할건지 (default : 3)
-	{: .notice--info}
+{: .notice--info}
 
 
