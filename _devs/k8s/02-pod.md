@@ -49,6 +49,7 @@ toc: true
 
 ## QoS classes
 - Pod의 중요도에 따른 Pod를 생성하고 중요하지 않은 Pod를 중지 할수 있다.
+- 중요도 : `Guaranteed > Burstable > BestEffort`
 
 - Guaranteed
 	- Pod의 모든 container에 request와 limit가 설정 되어 있어야 함.
