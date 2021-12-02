@@ -47,4 +47,24 @@ toc: true
 - failureThreshold : 몇번 실패를 방아야 실패로 판단 할건지 (default : 3)
 {: .notice--info}
 
+## QoS classes
+- Pod의 중요도에 따른 Pod를 생성하고 중요하지 않은 Pod를 중지 할수 있다.
+
+- Guaranteed
+	- Pod의 모든 container에 request와 limit가 설정 되어 있어야 함.
+	- request와 limit에는 memory와 cpu가 모두 설정 되어 있어야 함.
+	- 각 container 내에서 memory와 cpu의 request와 limit의 값이 같아야 한다.
+	{: .notice--info}
+	
+- Burstable
+	- request와 limit이 설정되어 있지만 memory와 cpu의 request와 limit의 값이 다른 경우.
+	- request와 limit중 하나만 설정된 경우.
+	- Pod의 container 중에 하나만 완벽하게 설정된 경우.
+	- 기타 Guaranteed 와 BestEffort 조건이 아닌 경우.
+	{: .notice--info}
+	
+- BestEffort
+	- Pod의 어떤 Continer 내에도 request와 limit가 모두 설정되어 있지 않은 경우.
+	{: .notice--info}
+
 
