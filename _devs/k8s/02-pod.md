@@ -61,6 +61,8 @@ toc: true
 	- request와 limit중 하나만 설정된 경우.
 	- Pod의 container 중에 하나만 완벽하게 설정된 경우.
 	- 기타 Guaranteed 와 BestEffort 조건이 아닌 경우.
+	- Burstable 상태중 우선 순위
+		- OOM Score(App의 메모리 / request 메모리)가 높음 Pod를 먼저 제거함.
 	{: .notice--info}
 	
 - BestEffort
