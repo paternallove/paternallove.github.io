@@ -32,3 +32,5 @@ devs:
         url: /devs/k8s/01-controller-object
       - title: "Pod"
         url: /devs/k8s/02-pod
+      - title: "Service"
+        url: /devs/k8s/03-service
