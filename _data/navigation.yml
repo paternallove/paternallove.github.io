@@ -34,3 +34,5 @@ devs:
             url: /devs/k8s/02-pod
         - title: "Service"
             url: /devs/k8s/03-service
+        - title: "Volume"
+            url: /devs/k8s/03-service
