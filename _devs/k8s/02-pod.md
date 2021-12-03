@@ -78,14 +78,17 @@ toc: true
 		- matchExpressions
 		- required
 		- preferred
+	{: .notice--info}
 	
 - 여러 Pod를 하나의 Node에 집중해서 할당
 	- PodAffinity
 		- matchExpressions : Pod의 라벨과 매칭되는 조건을 찾음.
-
+	{: .notice--info}
+	
 - Pod들 간에 겹치는 Node 없이 분산해서 할당 (master + slave 서비스)
 	- PodAntiAffinity
 		- matchExpressions : Pod의 라벨과 매칭되지 않는 조건을 찾음.
+	{: .notice--info}
 	
 - 특정 Node에 아무 Pod난 생성되지 않도록 제한
 	- Toleration : Pod에 설정되는 속성 (Taint에 설정된 조건과 일치해야 할당됨), Toleration은 nodeSelector, nodeName 같이 사용하는 경우 특정 Node에 할달 할수 있음 
@@ -96,6 +99,7 @@ toc: true
 	- Taint : Node에 설정되는 속성
 		- labels
 		- effect : `[NoSchedule, PreferNoSchedule, NoExecute]`
-	
+	{: .notice--info}
+
 
 
