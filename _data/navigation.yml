@@ -35,4 +35,4 @@ devs:
       - title: "Service"
         url: /devs/k8s/03-service
       - title: "Volume"
-        url: /devs/k8s/03-service
+        url: /devs/k8s/04-volume
