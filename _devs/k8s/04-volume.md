@@ -30,6 +30,7 @@ Cloud Storage
 	
 ## Dynamic Provisioning
 사용자가 PVC를 만들면 PV를 만들고 실제로 Volume과 연결해 주는 기능
+Dynamic Provisioning 을 지원하는 Storage solution인 설치되어 있어야 함.
 {: .notice--info}
 
 ### StorageClass
