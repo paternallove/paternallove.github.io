@@ -10,18 +10,18 @@ toc: true
 ## Volume Network Service
 
 ### Internal Network
-- kubernetes
+kubernetes
 	- hostPath
 	- local
-- On-Premise Solution
+On-Premise Solution
 	- storageOS
 	- ceph
 	- ClusterFS
-- NFS
+NFS
 {: .notice--info}
 	
 ### External Network
-- Cloud Storage
+Cloud Storage
 	- AWS
 	- Google Cloud Platform
 	- Microsoft Azure
@@ -31,6 +31,7 @@ toc: true
 ## Dynamic Provisioning
 사용자가 PVC를 만들면 PV를 만들고 실제로 Volume과 연결해 주는 기능
 
+### StorageClass
 
 ## PV
 
