@@ -2,14 +2,14 @@
 main:
   - title: "Develop"
     url: /devs/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "Year"
-    url: /year-archive/
-  # - title: "Minimal Mistakes"
-    # url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  # - title: "Categories"
+    # url: /categories/
+  # - title: "Tags"
+    # url: /tags/
+  # - title: "Year"
+    # url: /year-archive/
+  - title: "Minimal Mistakes"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
