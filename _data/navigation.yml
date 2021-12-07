@@ -36,7 +36,7 @@ devs:
         url: /devs/k8s/03-service
       - title: "Volume"
         url: /devs/k8s/04-volume
-      - title: "Authentication"
-        url: /devs/k8s/05-authentication
-      - title: "Authorization"
-        url: /devs/k8s/06-authorization
+      # - title: "Authentication"
+        # url: /devs/k8s/05-authentication
+      # - title: "Authorization"
+        # url: /devs/k8s/06-authorization
