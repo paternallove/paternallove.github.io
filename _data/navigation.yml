@@ -8,7 +8,7 @@ main:
     url: /tags/
   - title: "Year"
     url: /year-archive/
-  - title: "Quick-Start Guide"
+  - title: "Minimal Mistakes"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
