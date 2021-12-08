@@ -20,13 +20,14 @@ toc: true
 1. 외부 kubectl에 접근하고자 하는 cluster의 kubeconfig 파일이 있어야 한다.
 2. kubeconfig 내용
 	- clusters 항목
-		속성 : name, url, CA
+		- 속성 : name, url, CA
 		{: .notice--info}
 	- users 항목
-		속성 : name, crt, key
+		- 속성 : name, crt, key
 		{: .notice--info}
 	- contexts 항목 : cluster와 users를 정보를 연결
-		속성 : name, cluster, user
+		- 속성 : name, cluster, user
+		{: .notice--info}
 
 #### Service Account 를 사용
 1. k8s cluster에 Namespace를 만들면 기본적의로 default 이름의 ServiceAccount가 생성 된다.
