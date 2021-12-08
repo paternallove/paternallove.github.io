@@ -25,7 +25,14 @@ toc: true
 	- users 항목
 		속성 : name, crt, key
 		{: .notice--info}
+	- contexts 항목 : cluster와 users를 정보를 연결
+		속성 : name, cluster, user
 
-#### 
+#### Service Account 를 사용
+1. k8s cluster에 Namespace를 만들면 기본적의로 default 이름의 ServiceAccount가 생성 된다.
+2. 이 ServiceAccount에는 Secret이 생성되어 있으며 여기에는 CA crt 정보와 token 값이 들어 있음.
+3. Pod를 만들면 해당 ServiceAccount와 연결이 되고 token 값을 사용하여 API 서버와 연결이 된다.
+4. 결국 token 값을 알게 되면 사용자도 API 서버에 접근 할수 있다.
+
 
 ## Authorization
